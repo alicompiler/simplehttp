@@ -22,6 +22,9 @@ public class SimpleHttpClient {
         RequestConfigAdapter adapter = new RequestConfigAdapter(this.config);
         Call call = new OkHttpClient().newCall(adapter.toRequest());
         Response response = call.execute();
+        if (!response.isSuccessful()) {
+            throw new IOException("unsuccessful response , status code : " + response.code());
+        }
         if (response.body() != null) {
             return response.body().string();
         }

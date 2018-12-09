@@ -22,6 +22,8 @@ public class RequestConfigAdapter {
         this.httpUrl = HttpUrl.parse(requestConfig.getUrl());
         this.appendHeaders();
         if (this.requestConfig.getActionType() == HttpActionType.POST) {
+            this.requestBuilder.url(this.httpUrl);
+            this.multipartBodyBuilder.setType(MultipartBody.FORM);
             this.appendPOSTParameters();
             this.appendAttachments();
             this.requestBuilder.post(multipartBodyBuilder.build());
@@ -34,7 +36,7 @@ public class RequestConfigAdapter {
     private void appendAttachments() {
         for (Attachment attachment : this.requestConfig.getAttachments().all()) {
             MediaType mediaType = attachment.getMediaType() == null ? null : MediaType.parse(attachment.getMediaType());
-            this.multipartBodyBuilder.addFormDataPart(attachment.getName(), null, RequestBody.create(mediaType, attachment.getFile()));
+            this.multipartBodyBuilder.addFormDataPart(attachment.getName(), attachment.getName(), RequestBody.create(mediaType, attachment.getFile()));
         }
     }
 

@@ -15,12 +15,19 @@ public class SimpleHttpResponse {
         return this.content;
     }
 
-    public JSONObject asJsonObject() throws JSONException {
-        return new JSONObject(this.content);
-
+    public JSONObject asJsonObject() {
+        try {
+            return new JSONObject(this.content);
+        } catch (JSONException e) {
+            return null;
+        }
     }
 
-    public JSONArray asJsonArray() throws JSONException {
-        return new JSONArray(this.content);
+    public JSONArray asJsonArray() {
+        try {
+            return new JSONArray(this.content);
+        } catch (JSONException e) {
+            return null;
+        }
     }
 }
