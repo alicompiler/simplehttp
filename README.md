@@ -3,7 +3,7 @@
 http client library for android , built on top of **okhttp** library 
 
 # Why
-I designed this library to simplify the process of sending http and request , **and** to design an easy way to get the response without worrying about threads
+I designed this library to simplify the process of sending http request , **and** to design an easy way to get the response without worrying about threads
  
 <br><br>
 
