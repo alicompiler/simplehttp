@@ -22,7 +22,11 @@ first edit `build.gradle` and add this line `maven { url 'https://jitpack.io' }`
     
 and add this line in your dependencies in `app/build.gradle`
 
-    implementation 'com.github.alicompiler:simplehttp:1.0.0'
+    dependencies {
+        ...
+        implementation 'com.github.alicompiler:simplehttp:1.0.0'
+        ...
+    }
     
     
     
