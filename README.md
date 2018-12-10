@@ -5,9 +5,8 @@ http client library for android , built on top of **okhttp** library
 # Why
 I designed this library to simplify the process of sending http and request , **and** to design an easy way to get the response without worrying about threads
  
-#
-#
-#
+<br><br>
+
 # Installation
 
 just add this line in your dependencies in `app/build.gradle`
@@ -16,10 +15,7 @@ just add this line in your dependencies in `app/build.gradle`
     
     
     
-#
-#
-#
-#
+<br><br>
     
 #### How To Use
 
@@ -33,10 +29,9 @@ just add this line in your dependencies in `app/build.gradle`
                     .sendReqeustAsync();
                     
 
-#
-#
+<br><br>
 ###### SimpleHttp
-#
+<br>
 
 method | params | purpose
 --------------- | --------- | -------------
@@ -53,10 +48,9 @@ sendRequestAsync | - | send the request on other thread and trigger **onComplete
 
 
 
-#
-#
+<br><br>
 ###### SimpleHttpResponse
-#
+<br>
 
 
 method | purpose
@@ -65,28 +59,26 @@ asString | return the response as String or null
 asJsonObject | return the response as `JSONObject` , if the response can't be converted to `JSONObject` this method will return null
 asJsonArray | return the response as `JSONArray` , if the response can't be converted to `JSONArray` this method will return null
 
-#
-#
-#
+<br><br>
 ###### OnComplete
-#
+<br>
+
 method | parameter | purpose
 --------------- | ------------- | ---------
 onComplete | `SimpleHttpResponse` response | will be called when the resquest complete
 
-#
+<br>
 ###### OnError
-#
+<br>
+
 method | parameter | purpose
 --------------- | ------------- | ---------
 onComplete | `IOException` exception | will be called when the resquest fail
 
 
-#
-#
-#
+<br><br>
 ## Examples
-#
+<br>
 
 -- send post request with parameters and headers and setup onComplete & onError listeners
 
