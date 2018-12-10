@@ -43,8 +43,8 @@ public class RequestConfigBuilder {
         return this;
     }
 
-    public RequestConfigBuilder attach(File file, String name, String memeType) {
-        this.config.getAttachments().add(file, name, memeType);
+    public RequestConfigBuilder attach(File file, String name, String mediaType) {
+        this.config.getAttachments().add(file, name, mediaType);
         return this;
     }
 
