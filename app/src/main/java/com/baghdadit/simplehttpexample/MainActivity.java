@@ -7,12 +7,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import com.baghdadit.simplehttp.SimpleHttp;
 import com.baghdadit.simplehttp.config.HttpActionType;
 import com.baghdadit.simplehttp.listeners.OnComplete;
 import com.baghdadit.simplehttp.listeners.OnError;
-import com.github.angads25.filepicker.controller.DialogSelectionListener;
 import com.github.angads25.filepicker.model.DialogConfigs;
 import com.github.angads25.filepicker.model.DialogProperties;
 import com.github.angads25.filepicker.view.FilePickerDialog;
@@ -25,7 +23,6 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
 
     private static final String SIMPLE_HTTP_LOGGING_TAG = "SIMPLE_HTTP";
-
     private static final String BASE_ULR = "http://192.168.0.105:8000/api/";
     private static final String GET_REQUEST_URL = BASE_ULR + "test_get";
     private static final String POST_REQUEST_URL = BASE_ULR + "test_post";
@@ -116,13 +113,10 @@ public class MainActivity extends AppCompatActivity {
         properties.extensions = null;
         FilePickerDialog dialog = new FilePickerDialog(MainActivity.this, properties);
         dialog.setTitle("Select a File");
-        dialog.setDialogSelectionListener(new DialogSelectionListener() {
-            @Override
-            public void onSelectedFilePaths(String[] files) {
-                if (files.length > 0) {
-                    File file = new File(files[0]);
-                    uploadFile(file);
-                }
+        dialog.setDialogSelectionListener(files -> {
+            if (files.length > 0) {
+                File file = new File(files[0]);
+                uploadFile(file);
             }
         });
         dialog.show();

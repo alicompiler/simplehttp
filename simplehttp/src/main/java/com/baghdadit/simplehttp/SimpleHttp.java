@@ -59,10 +59,10 @@ public class SimpleHttp {
     }
 
 
-    public void sendRequest() throws IOException {
+    public SimpleHttpResponse sendRequest() throws IOException {
         RequestConfig config = this.builder.build();
         SimpleHttpClient client = new SimpleHttpClient(config);
-        client.sendRequest();
+        return new SimpleHttpResponse(client.sendRequest());
     }
 
     public void sendRequestAsync() {
