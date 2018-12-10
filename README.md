@@ -9,9 +9,20 @@ I designed this library to simplify the process of sending http and request , **
 
 # Installation
 
-just add this line in your dependencies in `app/build.gradle`
+first edit `build.gradle` and add this line `maven { url 'https://jitpack.io' }`
+    
+    ...
+    allprojects {
+        repositories {
+            ...
+            maven { url 'https://jitpack.io' }
+        }
+    }
+    ...
+    
+and add this line in your dependencies in `app/build.gradle`
 
-    implementation 'xxxx';
+    implementation 'com.github.alicompiler:simplehttp:1.0.0'
     
     
     
