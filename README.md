@@ -109,4 +109,3 @@ onComplete | `IOException` exception | will be called when the resquest fail
                     .onError(exception -> {/* ON COMPETE */})
                     .sendReqeustAsync();
 
-dd
