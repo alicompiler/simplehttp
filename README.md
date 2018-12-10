@@ -78,7 +78,7 @@ method | parameter | purpose
 --------------- | ------------- | ---------
 onComplete | `SimpleHttpResponse` response | will be called when the resquest complete
 
-<br>
+<br><br>
 ###### OnError
 <br>
 
