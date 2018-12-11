@@ -88,7 +88,7 @@ onComplete | `SimpleHttpResponse` response | will be called when the resquest co
 
 method | parameter | purpose
 --------------- | ------------- | ---------
-onComplete | `IOException` exception | will be called when the resquest fail
+onError | `IOException` exception | will be called when the resquest fail
 
 
 <br><br>
